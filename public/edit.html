@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta title="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>メモ編集</title>
+</head>
+<body>
+  <div class="container">
+    <form action="" class="single-memo-form">
+      <h4>メモ編集</h4>
+      <div class="form-control">
+        <label>Memo ID</label>
+        <p class="memo-edit-id"></p>
+      </div>
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" name="title" class="memo-edit-title">
+      </div>
+      <div class="form-control">
+        <label for="memo">Memo</label>
+        <textarea name="memo" id="memo" cols="30" rows="10" class="memo-edit-memo"></textarea>
+      </div>
+      <div class="form-control">
+        <label for="completed">Done/NotYet</label>
+        <input type="checkbox" title="completed" class="memo-edit-completed">
+      </div>
+      <button type="submit" class="block btn memo-edit-btn">Appy</button>
+      <a href="index.html" class="btn back-link">Return to Memos</a>
+      <div class="form-alert"></div>
+
+      
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="editMemo.js"></script>
+</body>
+</html>
