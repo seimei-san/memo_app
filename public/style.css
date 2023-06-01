@@ -16,6 +16,8 @@
   --white: #fff;
   --red-dark: #c84052;
   --green-dark: #1d926b;
+  --red-light: #ffaab6;
+  --green-light: #95ffdc;
 
   /* typography */
   --headingFont: "Inconsolata", monospace;
@@ -43,9 +45,10 @@
   box-sizing: border-box;
 }
 
+
 body {
   background: var(--backgroundColor);
-  background-image: url(./img/JanKenPong3.png);
+  background-image: url(./img/JanKenPong.png);
   background-position-x:0;
   background-position-y:0;
   background-repeat: no-repeat;
@@ -56,6 +59,13 @@ body {
   font-weight: 400;
   line-height: 1.75;
   width: var(--max-width);
+}
+
+label {
+  color: white;
+}
+.memo-edit-id {
+  color: white;
 }
 
 .btn {
@@ -84,7 +94,7 @@ body {
 form {
   width: 100%;
   /* background: var(--white); */
-  background-color: #dbe0ea6c;
+  /* background-color: #dbe0ea6c; */
   border-radius: var(--borderRadius);
   /* box-shadow: var(--shadow-2); */
   padding: 2rem 2.5rem;
@@ -95,16 +105,19 @@ textarea {
   width: 100%;
   padding: 0.375rem 0.75rem;
   border-radius: var(--borderRadius);
-  background: #f2f4f870;
+  background: #f2f4f8ad;
   border-color: transparent;
   border: 1px solid var(--grey-300);
   /* margin-bottom: 0.7rem; */
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .form-alert {
-  color: var(--red-dark);
+  color: var(--red-light);
+  background-color: rgba(143, 0, 0, 0.87);
   letter-spacing: var(--letterSpacing);
+  text-align: center;
   text-transform: capitalize;
 }
 
@@ -114,12 +127,13 @@ textarea {
   width: 1280px;
   max-width: var(--fixed-width);
   margin: 0 auto;
-  margin-top: 6rem;
+  /* margin-top: 6rem; */
 }
-.memo-form h4 {
-  font-size: 1.4rem;
+.memo-form h1 {
+  /* font-size: 1.4rem; */
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+  margin-top: -20px;
 }
 
 .memo-form .form-alert {
@@ -155,8 +169,8 @@ textarea {
 }
 .single-memo {
   padding: 1rem 2.5rem;
-  /* background: var(--white); */
-  background-color: #dbe0ea73;
+  background: var(--white);
+  background-color: #dbe0eaaf;
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   transition: var(--transition);
@@ -220,16 +234,17 @@ textarea {
 *************/
 .memo-edit-completed {
   width: auto;
-}
+}single
 
 .single-memo-form .form-alert {
   text-align: center;
   margin-top: 1rem;
 }
 
-.single-memo-form h4 {
+.single-memo-form h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  margin-top: -20px;
 }
 
 .single-memo-form p {
@@ -247,7 +262,9 @@ textarea {
 }
 
 .text-success {
-  color: var(--green-dark);
+  color: var(--green-light);
+  text-align: center;
+  background-color: rgb(10, 71, 10);
 }
 
 .back-link {
@@ -270,7 +287,7 @@ textarea {
   justify-content: center;
   align-items: flex-start;
   height: 400px;
-  width: 630px;
+  width: 600px;
   padding: 30px;
   overflow-y: scroll;
 }
