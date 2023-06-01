@@ -112,6 +112,7 @@ function playSound (sound) {
   let play_sound = new Audio('media/' + sound);
   play_sound.play();
 }
+TEST
 
 
 
