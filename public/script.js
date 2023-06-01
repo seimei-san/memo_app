@@ -73,6 +73,7 @@ formDOM.addEventListener("submit", async (event) => {
   event.preventDefault();
   const title = titleInputDOM.value;
   const memo = memoInputDOM.value;
+  playSound("se_13_gun.wav");
 
   try {
     await axios.post("/api/v1/memos", { title: title, memo: memo })
@@ -97,6 +98,7 @@ memosDOM.addEventListener('click', async (event) => {
   const element = event.target;
   if (element.parentElement.classList.contains('delete-btn')) {
     const id = element.parentElement.dataset.id;
+    playSound("sei_ge_kami_kusya03.mp3");
     try {
       await axios.delete(`/api/v1/memos/${id}`);
       showMemos();
@@ -105,6 +107,11 @@ memosDOM.addEventListener('click', async (event) => {
     }
   }
 });
+
+function playSound (sound) {
+  let play_sound = new Audio('media/' + sound);
+  play_sound.play();
+}
 
 
 
