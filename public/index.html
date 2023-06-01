@@ -17,18 +17,38 @@
   <body>
     <div class="appMain">
       <form action="" class="memo-form">
-        <h1>メモ帳だぜ！</h1>
+        <h1>メモを取るぜ！</h1>
         <div class="control">
-          <input type="text" title="title" id="title-input" placeholder="メモのタイトルを入力" v-model=""/>
-          <textarea name="" id="memo-input" cols="30" rows="10"></textarea>
-          <button type="submit" class="btn submit-btn">Send</button>
+          <input type="text" title="title" id="title-input" placeholder="メモのタイトルを入力" v-model="v_title"/>
+          <textarea name="" id="memo-input" cols="30" rows="10" v-model="v_memo"></textarea>
+          <button type="submit" class="btn submit-btn" v-on:click="v_send">Send</button>
         </div>
-        <div class="form-alert"></div>
+        <!-- <div class="form-alert" v-if="v_alert"></div>  ### VUE ### -->
       </form>
       <div class="memo-list-box">
         <section class="memos-container">
           <div class="memos">
+            <!-- <h5 class="v_empty-list" v-if="v_no_memos">メモは、ありません。</h5> ### VUE ### -->
             <!-- Simulation -->
+            <!-- ### VUE ### -->
+            <!-- <div v-if="v_memos_if">
+              <div v-for="(completed, _id, title) in v_memos)">
+                <div class="single-memo v-bind:class="memo-completed"}">
+                  <h5>
+                    <span><i class="far fa-check-circle"></i></span>{{ title }}
+                  </h5>
+                  <div class="memo-links">
+                    <a href="edit.html?id={{ _id }}" class="edit-link">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                    <button type="button" class="delete-btn" data-id={{ _id }}>
+                    <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- ### VUE ### -->
           </div>
         </section>
       </div>

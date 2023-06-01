@@ -6,13 +6,33 @@ const titleInputDOM = document.querySelector('#title-input');
 const memoInputDOM = document.querySelector('#memo-input');
 const formAlertDOM = document.querySelector(".form-alert");
  
-const app = Vue.createApp({
-  data: () => ({
+// const app = Vue.createApp({
+//   data: () => ({
+//     v_title: "",
+//     v_memo: "",
+//     v_alert: false,
+//     v_no_memos: false,
+//     v_memos: [],
+//     v_memo_completed: false,
+//     v_id: "",
+//     v_memos_if: false
+//   }),
+//   methods: {
+//     async v_showMemos () {
+//       try {
+//         const { data: v_memos } = await axios.get("/api/v1/memos")
+//         if (v_memos.length < 1) {
+//           this.v_no_memos = true
+//           return
+//         }
+//         this.v_memos_if = true 
+//       }
 
-  })
+//     },
+//   }
 
-})
-app.mount("#app")
+// })
+// app.mount("#appMain")
 
 
 
@@ -21,7 +41,7 @@ const showMemos = async () => {
   try {
     const { data: memos }= await axios.get("/api/v1/memos");
     if (memos.length < 1) {
-      memosDOM.innerHTML = `<h5 class="empty-list">No Memos</h5>`;
+      memosDOM.innerHTML = `<h5 class="empty-list">メモは、ありません。</h5>`;
       return
     }
     const allMemos = memos.map((data) => {
@@ -60,12 +80,12 @@ formDOM.addEventListener("submit", async (event) => {
     titleInputDOM.value = "";
     memoInputDOM.value = "";
     formAlertDOM.style.display = "block";
-    formAlertDOM.textContent = "Add the memos";
+    formAlertDOM.textContent = "メモが追加されました！";
     formAlertDOM.classList.add("text-success");
   } catch (error) {
     console.log(error);
     formAlertDOM.style.display = "block";
-    formAlertDOM.innerHTML = "Not valid. please try again!"
+    formAlertDOM.innerHTML = "入力し直してください！"
   }
   setTimeout(() => {
     formAlertDOM.style.display = "none";

@@ -63,6 +63,7 @@ body {
 
 label {
   color: white;
+  font-weight: bold;
 }
 .memo-edit-id {
   color: white;
