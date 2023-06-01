@@ -15,29 +15,28 @@
     <title>メモ帳だぜ！</title>
   </head>
   <body>
-    <form action="" class="memo-form">
-      <h4>メモ帳だぜ！</h4>
-      <div class="control">
-        <input 
-        type="text" 
-        title="title" 
-        id="title-input" 
-        placeholder="メモのタイトルを入力"
-        />
-        <textarea name="" id="memo-input" cols="30" rows="10"></textarea>
-        <button type="submit" class="btn submit-btn">Send</button>
-      </div>
-      <div class="form-alert"></div>
-    </form>
-    <div class="memo-list-box">
-      <section class="memos-container">
-        <div class="memos">
-          <!-- Simulation -->
+    <div class="app">
+      <form action="" class="memo-form">
+        <h4>メモ帳だぜ！</h4>
+        <div class="control">
+          <input type="text" title="title" id="title-input" placeholder="メモのタイトルを入力" v-model=""/>
+          <textarea name="" id="memo-input" cols="30" rows="10"></textarea>
+          <button type="submit" class="btn submit-btn">Send</button>
         </div>
-      </section>
+        <div class="form-alert"></div>
+      </form>
+      <div class="memo-list-box">
+        <section class="memos-container">
+          <div class="memos">
+            <!-- Simulation -->
+          </div>
+        </section>
+      </div>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -6,7 +6,16 @@ const titleInputDOM = document.querySelector('#title-input');
 const memoInputDOM = document.querySelector('#memo-input');
 const formAlertDOM = document.querySelector(".form-alert");
  
- 
+const app = Vue.createApp({
+  data: () => ({
+
+  })
+
+})
+app.mount("#app")
+
+
+
 
 const showMemos = async () => {
   try {
