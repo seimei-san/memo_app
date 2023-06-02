@@ -5,7 +5,7 @@ const MemoSchema = new mongoose.Schema({
     type: String,
     required: [true, "Enter Memo Title"],
     trim: true,
-    maxlength: [20, "less than 20 char"],
+    maxlength: [50, "less than 20 char"],
   },
   memo: {
     type: String,
